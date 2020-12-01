@@ -63,7 +63,7 @@ class Single_host_scanner():
                 self.insert_info("序列号匹配失败,无法判断主机开启状态\n")
 
         except:
-            self.insert_info("主机 %s | 关闭" %self.host)
+            self.insert_info("程序出错，可能缺少依赖，请检查系统是否安装Winpcap")
 
         return self.state
 
@@ -282,10 +282,9 @@ class Hosts_scanner():
 
 
 if __name__ == "__main__":
-    my = "192.168.17.130"
     sjtu = "202.112.26.54"  
     ftp = "202.120.58.157"
-    ports = [21,80]
+    ports = range(100,200)
     scan = Single_host_scanner(sjtu)
     #scan.icmp_scan()
     #scan.tcp_connect(ports)

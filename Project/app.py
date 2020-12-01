@@ -1,5 +1,8 @@
 from tkinter import *
 from scanner import Single_host_scanner, Hosts_scanner
+import multiprocessing
+import multiprocessing_win
+import scapy
 
 class App(Tk):
 
@@ -208,5 +211,6 @@ class App(Tk):
 
     
 if __name__ == "__main__":
+    multiprocessing.freeze_support()
     app = App()
     app.mainloop()
